@@ -1,0 +1,6 @@
+colorama==0.4.6
+mysql-connector-python==9.3.0
+prettytable==3.16.0
+python-dotenv==1.1.0
+sc-pylibs==0.0.0.1
+wcwidth==0.2.13
