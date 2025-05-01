@@ -55,7 +55,8 @@ def get_valid_categories():
     # SQL query to retrieve genre names from the 'category' table
     query = f"""
     SELECT name 
-    FROM category;
+    FROM category 
+    ORDER BY name ASC;
     """
     # Execute the query, fetching results from the 'sakila' database
     return execute_query(query, use_app_db=False, fetch=True)

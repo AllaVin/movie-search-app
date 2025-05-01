@@ -44,17 +44,33 @@ def handle_search_by_genre_and_year():
             print("\n Please enter the genre number.")
 
     # Prompt the user to enter a release year within the allowed range
+    # while True:
+    #     try:
+    #         year = int(input(Fore.BLUE + "\n✅ Please enter the movie release year (range from 1900 to 2025): " + Style.RESET_ALL))
+    #         if 1900 <= year <= 2025:
+    #             break
+    #         else:
+    #             # Handle year outside the allowed range
+    #             print(Fore.YELLOW + "The year must be within the range of 1900 to 2025." + Style.RESET_ALL)
+    #     except ValueError:
+    #         # Handle non-integer input for year
+    #         print(Fore.YELLOW + "Please enter a valid year." + Style.RESET_ALL)
+
+    from datetime import datetime
+
+    current_year = datetime.now().year
+
     while True:
         try:
-            year = int(input(Fore.BLUE + "\n✅ Please enter the movie release year (range from 1900 to 2025): " + Style.RESET_ALL))
-            if 1900 <= year <= 2025:
+            year = int(input(
+                Fore.BLUE + f"\n✅ Please enter the movie release year (range from 1900 to {current_year}): " + Style.RESET_ALL))
+            if 1900 <= year <= current_year:
                 break
             else:
-                # Handle year outside the allowed range
-                print(Fore.YELLOW + "The year must be within the range of 1900 to 2025." + Style.RESET_ALL)
+                print(Fore.YELLOW + f"The year must be within the range of 1900 to {current_year}." + Style.RESET_ALL)
         except ValueError:
-            # Handle non-integer input for year
             print(Fore.YELLOW + "Please enter a valid year." + Style.RESET_ALL)
+
 
     # Perform the search based on selected genre and year
     movies = db_operations.search_movies_by_genre_and_year(genre, year)

@@ -1,4 +1,4 @@
-# Основной цикл работы программы: вывод меню, ожидание команд от пользователя, вызов обработчика команд.
+# Main program loop: displaying the menu, waiting for user commands, and calling the command handler.
 
 import command_handler
 from colorama import init, Fore, Style
