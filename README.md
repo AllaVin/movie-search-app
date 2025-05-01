@@ -8,6 +8,7 @@
 - [🖥️ Available Commands](#-available-commands)
 - [📚 Usage Examples](#-usage-examples)
 - [📂 Project Structure](#-project-structure)
+- [🔐 Environment Variables](#-environment-variables)
 - [📦 Requirements](#-requirements)
 - [👨‍💻 Author](#-author)
 
@@ -56,12 +57,24 @@ git clone https://github.com/AllaVino/movie-search-app.git
 cd Final_Project_Python_Fundamentals
 
 # Install dependencies
-pip install mysql-connector-python
 pip install -r requirements.txt
 
 # Run application
 python main.py
 ```
+
+### **🔐 Environment Variables**
+Create a .env file in the root directory with the following structure:
+```env
+host_read=your_read_db_host
+user_read=your_read_db_user
+password_read=your_read_db_password
+
+host_write=your_write_db_host
+user_write=your_write_db_user
+password_write=your_write_db_password
+```
+⚠️ Important: Do not share or commit your .env file. Add it to your .gitignore file.
 
 ### **🖥️  Available Commands**
 | Option number | Description |
